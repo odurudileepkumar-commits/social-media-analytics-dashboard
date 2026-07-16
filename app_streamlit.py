@@ -119,6 +119,11 @@ st.markdown("""
 
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+CSV_FILE = BASE_DIR / "dataset.csv"
+
+df = pd.read_csv(CSV_FILE)
+
 BASE_DIR = Path(__file__).parent
 DATA_FILE = BASE_DIR / "dataset.csv"
 
