@@ -117,7 +117,12 @@ st.markdown("""
 
 # ---------------- LOAD DATA ----------------
 
-df = pd.read_csv("dataset.csv")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+CSV_FILE = BASE_DIR / "dataset.csv"
+
+df = pd.read_csv(CSV_FILE)
 #st.write(df.columns)
 # Create Tweet Length column
 df["length"] = df["post_text"].astype(str).apply(len)
